@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scrum Planing Poker - Initial</title>
+    <link href="/utils/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/utils/assets/css/helper.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="col-sm-12 h-100">
+                <div class="d-flex flex-column align-items-center justify-content-center h-100">
+                    <h2 class="text-center mb-3">Your name</h2>
+                    <form action="/home" method="post">
+                        <div class="form-group">
+                            <input id="userNameInput" type="text" required class="form-control">
+                        </div>
+                        <button id="save_name" type="submit" class="btn btn-success mt-3 m-auto d-block">Continue</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/modules/socket.io/client-dist/socket.io.js"></script>
+    <script>
+        const socket = io();
+    </script>
+    <script src="/utils/assets/js/helper.js"></script>
+    <script type="module" src="/utils/assets/js/home.js"></script>
+</body>
+</html>
