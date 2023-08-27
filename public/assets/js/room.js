@@ -14,6 +14,7 @@ if (joinRoomBtn) {
     joinRoomBtn.addEventListener('click', function () {
         let roomNumberInput = document.querySelector('#room_number');
         roomNumberInput.reportValidity();
+        createCookie("joinedFromHome", 1, 1);
         socket.emit('join room', roomNumberInput.value, getCookie('userName'));
     });
 }
@@ -43,4 +44,14 @@ socket.on('joined room', function(roomData, socketId) {
     joinedRoom(roomData, socketId);
 });
 
+socket.on('room no exists', function() {
+    const node = document.createElement('div');
+    node.className = 'alert alert-danger mt-4';
+    node.textContent = 'Room not found';
+    node.id = 'notfound';
+    notificationsPanel.append(node);
+    setTimeout(function (){
+        node.remove();
+    }, 2000);
+})
 checkErrorParams();

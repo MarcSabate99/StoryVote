@@ -1,9 +1,12 @@
 {
   "name": "scrum-planing-poker",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "author": {
+    "name": "Marc Sabaté Ferré",
+    "email": "masafecontact@gmail.com"
+  },
   "description": "Scrum Planing Poker Application",
   "dependencies": {
-    "dist": "^0.1.2",
     "express": "^4.18.2",
     "http": "^0.0.1-security",
     "node-cron": "^3.0.2",
