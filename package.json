@@ -1,6 +1,6 @@
 {
   "name": "scrum-planing-poker",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": {
     "name": "Marc Sabaté Ferré",
     "email": "masafecontact@gmail.com"
@@ -29,6 +29,6 @@
     "test": "node --trace-warnings node_modules/jest/bin/jest.js",
     "coverage": "jest --coverage",
     "build": "tsc",
-    "test:e2e": "node_modules/jest/bin/jest.js --testPathPattern=.*e2e.test.ts$"
+    "test:e2e": "node node_modules/jest/bin/jest.js --testPathPattern=.*e2e.test.ts$"
   }
 }

@@ -2,9 +2,7 @@ import inMemoryRepositoryMock from "../../../../../__mocks__/Domain/Interface/In
 import {GetRoomUseCase} from "../../../../../../src/Application/UseCase/Room/GetRoom/GetRoomUseCase";
 import {RoomNumber} from "../../../../../../src/Domain/ValueObject/Room/RoomNumber";
 import {RoomNumberMother} from "../../../../../Utils/Stubs/Domain/ValueObject/Room/RoomNumberMother";
-import {Room} from "../../../../../../src/Domain/Entity/Room/Room";
 import {RoomMother} from "../../../../../Utils/Stubs/Domain/Entity/Room/RoomMother";
-import {UserId} from "../../../../../../src/Domain/ValueObject/User/UserId";
 import {UserIdMother} from "../../../../../Utils/Stubs/Domain/ValueObject/User/UserIdMother";
 import {Card} from "../../../../../../src/Domain/Entity/Card/Card";
 import {User} from "../../../../../../src/Domain/Entity/User/User";
@@ -12,10 +10,10 @@ import {User} from "../../../../../../src/Domain/Entity/User/User";
 describe('GetRoomUseCase Unit Test', () => {
     it('should get a room by room number', () => {
         const roomNumber: RoomNumber = RoomNumberMother.create(1);
-        const userId:UserId = UserIdMother.create("1");
+        const userId = UserIdMother.create("1");
         const emptyCard: Record<string, Card> = {};
         const emptyUser: Record<string, User> = {};
-        const room:Room = RoomMother.create(
+        const room = RoomMother.create(
             userId,
             emptyUser,
             roomNumber,
