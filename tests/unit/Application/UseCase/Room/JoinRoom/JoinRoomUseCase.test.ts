@@ -2,23 +2,20 @@ import inMemoryRepositoryMock from "../../../../../__mocks__/Domain/Interface/In
 import {JoinRoomUseCase} from "../../../../../../src/Application/UseCase/Room/JoinRoom/JoinRoomUseCase";
 import {User} from "../../../../../../src/Domain/Entity/User/User";
 import {UserMother} from "../../../../../Utils/Stubs/Domain/Entity/User/UserMother";
-import {UserId} from "../../../../../../src/Domain/ValueObject/User/UserId";
 import {UserIdMother} from "../../../../../Utils/Stubs/Domain/ValueObject/User/UserIdMother";
-import {Room} from "../../../../../../src/Domain/Entity/Room/Room";
 import {RoomMother} from "../../../../../Utils/Stubs/Domain/Entity/Room/RoomMother";
 import {Card} from "../../../../../../src/Domain/Entity/Card/Card";
-import {RoomNumber} from "../../../../../../src/Domain/ValueObject/Room/RoomNumber";
 import {RoomNumberMother} from "../../../../../Utils/Stubs/Domain/ValueObject/Room/RoomNumberMother";
 import {JoinRoomUseCaseRequest} from "../../../../../../src/Application/UseCase/Room/JoinRoom/JoinRoomUseCaseRequest";
 
 describe('JoinRoomUseCase Unit Test', () => {
     it('should allow a user to join a room', () => {
-        const userId:UserId = UserIdMother.create("1");
-        const user: User = UserMother.create("test", userId);
-        const roomNumber: RoomNumber = RoomNumberMother.create(1);
+        const userId = UserIdMother.create("1");
+        const user = UserMother.create("test", userId);
+        const roomNumber = RoomNumberMother.create(1);
         const emptyCard: Record<string, Card> = {};
         const emptyUser: Record<string, User> = {};
-        const room:Room = RoomMother.create(
+        const room = RoomMother.create(
             userId,
             emptyUser,
             roomNumber,

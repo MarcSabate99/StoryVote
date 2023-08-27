@@ -1,9 +1,8 @@
-import {Card} from "../../../../../src/Domain/Entity/Card/Card";
 import {CardMother} from "../../../../Utils/Stubs/Domain/Entity/Card/CardMother";
 
 describe('Card entity test', () => {
     it('should get points and voter from the card', () => {
-        const card: Card = CardMother.create(
+        const card = CardMother.create(
           5,
           true
         );

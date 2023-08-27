@@ -1,7 +1,6 @@
 import {RoomNumber} from "../../../../../../src/Domain/ValueObject/Room/RoomNumber";
 import {RoomNumberMother} from "../../../../../Utils/Stubs/Domain/ValueObject/Room/RoomNumberMother";
 import {PointMother} from "../../../../../Utils/Stubs/Domain/ValueObject/Points/PointMother";
-import {Point} from "../../../../../../src/Domain/ValueObject/Points/Point";
 import inMemoryRepositoryMock from "../../../../../__mocks__/Domain/Interface/InMemoryRepositoryInterfaceMock";
 import {
     GetPointsUseCaseRequest
@@ -10,7 +9,7 @@ import {GetPointsUseCase} from "../../../../../../src/Application/UseCase/Point/
 
 describe('GetPointsUseCase', () => {
     it('should get points for a given room', () => {
-        const points:Point = PointMother.create(5);
+        const points = PointMother.create(5);
         inMemoryRepositoryMock.getPoints.mockReturnValue(
             points
         )
