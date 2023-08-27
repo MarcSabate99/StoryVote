@@ -19,7 +19,12 @@ function imVoter() {
 
 function join() {
     const creator = getCookie("creator");
+    const joinedFromHome = getCookie("joinedFromHome");
     const roomNumber = parseInt(window.location.pathname.split("/").pop(), 10);
+    if(parseInt(joinedFromHome, 10) === 1){
+        deleteCookie("joinedFromHome")
+        return;
+    }
     socket.emit('join room', roomNumber, getCookie('userName'), creator);
 }
 
@@ -75,7 +80,9 @@ addClickListenerToCards();
 socket.on('show points', (points) => {
     showPoints(points);
 });
-
+socket.on('room no exists', function() {
+    window.location.replace("/home?room=not_found");
+})
 socket.on('update points', (votes) => {
     createVotesText(votes);
 });

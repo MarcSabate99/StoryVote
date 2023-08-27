@@ -8,7 +8,6 @@ const app = express();
 const httpServer = http.createServer(app);
 const io = new Server(httpServer);
 const kernel = new Kernel(app, path.resolve());
-
 new SocketManager(io, kernel.getRepository());
 kernel.init();
 
